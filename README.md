@@ -1,2 +1,2 @@
 # pasta-bar
-Phone ordering for pasta bar
+Ordering system for a pasta bar
