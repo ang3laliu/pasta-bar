@@ -2,23 +2,35 @@ def get_integer(m):
     user_input = int(input(m))
     return user_input
 
+
 def get_string(m):
-    user_input = input(m)
+    user_input = input(m).upper()
     return user_input
 
-def add_pasta(L):
-    customer_order = []
-    add_pasta_type = get_integer("Please select the item number of the pasta you would like to order: ")
-    add_pasta_quantity = get_integer("How many {} would you like to order? ".format(L[(add_pasta_type)-1][0]))
-    confirm = get_string("You are adding {} {} to your order, Y/N: ".format(add_pasta_quantity, L[(add_pasta_type)-1][0]))
-    if confirm == "Y":
-        customer_order.append([L[(add_pasta_type)-1][0],add_pasta_quantity])
-        output = ("You have added {} {}.".format(add_pasta_quantity, L[(add_pasta_type)-1][0]))
+
+def make_line():
+    print("-" * 40)
+
+
+def delete_pasta(C):
+    for i in range(0, len(C)):
+        sub_total = C[i][2] * C[i][1]
+        output = "{} : {} x {} @ ${} = ${} ".format(i+1, C[i][1], C[i][0], C[i][2], sub_total)
         print(output)
-        print(customer_order)
+    delete_pasta = get_integer("Please select the item number of the pasta you would like to remove: ")
+    delete_pasta_quantity = get_integer("Please select the number of {} you would like to remove: ".format(C[(delete_pasta)-1][0]))
+    confirm = get_string("You are removing {} {} from your order, Y/N: ".format(delete_pasta_quantity, C[(delete_pasta)-1][0]))
+    if confirm == "Y":
+        C[(delete_pasta)-1][1] = C[(delete_pasta)-1][delete_pasta_quantity] - delete_pasta_quantity
     else:
         print("Order has not been updated.")
-        print("Returning to main menu...\n")
+        print("Returning to main menu...")
+    make_line()
+    for i in range(0, len(C)):
+        sub_total = C[i][2] * C[i][1]
+        output = "{} : {} x {} @ ${} = ${} ".format(i + 1, C[i][1], C[i][0], C[i][2], sub_total)
+        print(output)
+
 
 pasta_menu = [
         ["Linguine Gamberi", 23],
@@ -31,7 +43,10 @@ pasta_menu = [
         ["Raviolo di Salsiccia", 22],
         ["Ravioli di Ricotta", 20]
     ]
-add_pasta(pasta_menu)
+
+customer_order= [['Fusilli Pesto', 3, 19],['Rigatoni alla Caponata', 1, 21]]
+
+delete_pasta(customer_order)
 
 
 
