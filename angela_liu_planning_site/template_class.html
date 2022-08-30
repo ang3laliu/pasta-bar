@@ -38,7 +38,9 @@
         <h1>Brief</h1>
         <p> To develop a computer program using  techniques and processes that will allow an operator/user to place an order for a customer, as well as responding accordingly to any user errors or unexpected entires. Some features within the program include allowing the operator to review and update the customers pizza choices, enter customer details, display pizza(s) ordered and pick-up/delivery requirements, before then displaying delivery details, final order and total cost in a receipt style format. </p>
         <h4> Initial Project Backlog: </h4>
-        <img class="img-responsive" src="" alt="">
+        <img class="img-responsive" src="initial-project-backlog-1.jpg" alt="Inital project backlog">
+        <p></p>
+        <p> Document how this changes over time </p>
             
         <hr>
         
@@ -48,43 +50,50 @@
         <p> To create a main menu for users which runs in a loop, with two options; print the pasta menu or quit the program and consequently, stop the loop. The pasta menu displayed after selecting the print option should have a corresponding item number as well as price. </p>
         
         <h4> Planning Board & Code Output: </h4>
-        <img class="img-responsive" src="sprint_1_plan_1.jpg" alt="Planning board, simple validation code and output for sprint one">
-        <p></p>
-        <img class="img-responsive" src="sprint_1_plan_2.jpg" alt="Planning board, simple validation code and output for sprint one">
+        <img class="img-responsive" src="s1-plan.jpg" alt="Plan for sprint one">
         <p></p>
             
         <h4> Reflection: </h4>
-        <p> The first sprint I have completed for my program prints a basic pasta menu for the customer when requested, along with a list of the pasta prices. The program runs in a loop, which means every time the pasta menu is printed (upon the user request 'V' to 'view' menu) the user is redirected to the main menu, until the quit option ('Q') is requested. If the user selects to quit the program, the loop terminates and a confirmation message is printed informing the user that the program has ended. I have also coded 'get_integer' and 'get_string' functions, which provide simple validations for the program when the user enters either a numerical or string variable. I have considered adding further validation to the 'get_string' code to capitalise all user entries in the second sprint. This should generate less issues for the user (as when entering an 'v' or 'q' the program will still accept/understand the user entry) and prevent the program from crashing altogether. The 'get_integer' function is not yet being put to use in the program, but will certainly be called in future sprints when the user is able to order a pasta/select an index number from the pasta list. I have yet to run into any errors in the code. </p>
+        <p> The first sprint I have completed for my program prints a basic pasta menu for the customer when requested, along with a list of the pasta prices. The program runs in a loop, which means every time the pasta menu is printed (upon the user request 'V' to 'view' menu) the user is redirected to the main menu, until the quit option ('Q') is requested. If the user requests to quit the program, the loop terminates and a confirmation message is printed, informing the user that the program has ended. I have also coded 'get_integer' and 'get_string' functions, which provide simple validations for the program when the user enters either a numerical or string variable. I have considered adding further validation to the 'get_string' code to capitalise all user entries in the second sprint. This should generate less issues for the user (as when entering an 'v' or 'q' the program will still accept/understand the user entry) and prevent the program from crashing altogether. The 'get_integer' function is not yet being put to use in the program, but will certainly be called in future sprints when the user is able to order a pasta/select an index number from the pasta list. I have yet to run into any errors in the code. </p>
         <hr>
         
         <!-- Sprint Two -->   
         <h1>Sprint Two</h1>
         <h4> Aim: </h4>
-        <p> To create a function which allows the user to order a pasta dish from the pasta menu, selecting a flavour and quantity of choice. To create another function which enables the operator to review their current order status, which means printing all of the pizza flavours and quantities they have ordered. These options will be incorporated into the main menu as 'A' for 'Add pasta to order' and 'R' for 'Review customer order'. </p>
+        <p> To create a function which allows the user to order a pasta dish from the pasta menu, selecting a flavour and quantity of choice. Another function will also be created to enable the operator to review their current order status, which means printing all of the pizza flavours and quantities they have ordered as well as the price. These options will be incorporated into the main menu as 'A' for 'Add pasta to order' and 'R' for 'Review customer order'. </p>
+        
+        <h4> Stand Up: </h4>
+        <img class="img-responsive" src="stand_up_1.jpg" alt="First stand up on 21/06/2022">
+        <p></p>
+        <p> Planning for sprint two includes a short meeting at the beginning of the lesson which questions what we have already completed, what we intend to complete and what is blocking us from doing so. On the 21st of June, I had completed and tested the first sprint of my program and pushed it to Github. I decided, as seen above, to finish a reflection for my first sprint and start planning for my second sprint, which involes creating an add pasta to order and review order function.</p>
         
         <h4> Planning Board & Code Output: </h4>
-        <img class="img-responsive" src="" alt="">
+        <img class="img-responsive" src="s2-plan-1.jpg" alt="Planning board, simple validation code and output for sprint two">
+        <p></p>
+        <img class="img-responsive" src="s2-plan-2.jpg" alt="Code and output for sprint two">
+        <p></p>
             
         <h4> Reflection: </h4>
-        <p> limit pasta entries </p>
+        <p> An error I encountered was if the user entered an index number that did not exist, such as 100, the program would crash and as it is unable to  find a value in the pasta menu list which matched the user's input. As there are no validations which can yet prevent the user from entering invalid indexes, the program could not recover from this error and crashed. Consequently, I plan to make validations in a future sprint of my program which will provide limits for the user's inputs surrounding indexes and quantities. </p>
+        <p> </p>
         <hr>
         
         <!-- Sprint Three -->   
         <h1>Sprint Three</h1>
         <h4> Aim: </h4>
-        <p> To create a function which allows the user to remove a number of pasta dishes from their current order. The function should print out the customer order which corresponding numbers and ask the user which pasta dish they wish to delete from. The user can then select the number of dishes they would like to remove. This remove pasta option will be incorporated into the main menu as 'D' for 'Delete pasta from order'. </p>
+        <p> To create a function which allows the user to adjust the number of pasta dishes in their current order. The function should print out the customer order with corresponding item numbers and ask the user which pasta dish they wish to change the quanity of. The user can then input the new number of dishes they would like. This update pasta option will be incorporated into the main menu as 'U' for 'Update pasta quantity'. </p>
         
         <h4> Planning Board & Code Output: </h4>
         <img class="img-responsive" src="" alt="">
             
         <h4> Reflection: </h4>
-        <p> validation </p>
+        <p> complete order </p>
         <hr>
             
         <!-- Sprint Four -->   
         <h1>Sprint Four</h1>
         <h4> Aim: </h4>
-        <p> To create... </p>
+        <p> To create... complete order funtion + addition of grand total to review order function </p>
         
         <h4> Planning Board & Code Output: </h4>
         <img class="img-responsive" src="" alt="">
