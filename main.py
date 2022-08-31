@@ -43,6 +43,7 @@ def pasta_descriptions():
 
 
 def add_pasta(L,C):
+    view_menu()
     add_pasta_type = get_integer("Please select the item number of the pasta you would like to order: ")
     add_pasta_quantity = get_integer("How many {} would you like to order? ".format(L[(add_pasta_type)-1][0]))
     confirm = get_string("You are adding {} {} to your order, (Y/N): ".format(add_pasta_quantity, C[add_pasta_type-1][0]))
@@ -116,16 +117,14 @@ def delivery_option(d):
     pd = get_string("Pick up is free of charge, delivery is an extra $3 (P/D)?: ")
     if pd == "D":
         address = get_string("Please enter your address (e.g. 12A Tadpole Lane Karori 6012): ")
+        make_line()
         d.append(address)
         print("NAME: {}\nPHONE: {}\nADDRESS: {}".format(d[0], d[1], d[2]))
         make_line()
     elif pd == "P":
+        make_line()
         print("NAME: {}\nPHONE: {}".format(d[0], d[1]))
         make_line()
-    else:
-        print("Unrecognised entry.")
-        print("Returning to main menu...")
-        print("how to jump to the end of the function")
     confirm = get_string("Confirm your details are correct (Y/N): ")
     make_line()
     if confirm == "Y":
@@ -138,7 +137,7 @@ def delivery_option(d):
     make_line()
 
 
-def finish_order(C,d):
+def finish_order(C,d, extras=3):
     if len(C)==0:
         print("Your order is empty, please add pasta before completing.")
         print("Returning to main menu...")
@@ -150,10 +149,11 @@ def finish_order(C,d):
             grand_total += sub_total
             output = "{} x {} @ ${} = ${} ".format(C[i][1], C[i][0], C[i][2], sub_total)
             print(output)
+        # use lengths to test for pickup(2) or delivery(3)
         if len(d)==2:
             print("Total Price : ${}".format(grand_total))
         elif len(d)==3:
-            print("Total Price : ${} + $3 = ${}".format(grand_total, grand_total+3))
+            print("Total Price : ${} + $3 = ${}".format(grand_total, grand_total+extras))
         make_line()
     if len(d)==0:
         print("Please enter your details before continuing.")
