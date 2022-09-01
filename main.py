@@ -312,25 +312,25 @@ def finish_order(c, d, extras=3):
                 print(output)
             print("Total Price : ${} + $3 = ${}".format(grand_total, grand_total+extras))
             make_line()
-            # again, use lengths to test for pickup(2) or delivery(3), for the user to check over their personal details
-            if len(d) == 2:
-                print("NAME: {}\nPHONE: {}".format(d[0], d[1]))
-                make_line()
-            elif len(d) == 3:
-                print("NAME: {}\nPHONE: {}\nADDRESS: {}".format(d[0], d[1], d[2]))
-                make_line()
-            # request confirmation
-            confirm = get_yn("Please confirm your order and details are correct, (Y/N): ")
-            if confirm == "Y":
-                print("Thank you for ordering with us, your food will be ready soon.")
-                make_line()
-                # clear both the order list and details list upon confirmation
-                c.clear()
-                d.clear()
-            else:
-                print("Order is not finalised.")
-                print("Returning to main menu...")
-                make_line()
+        # again, use lengths to test for pickup(2) or delivery(3), for the user to check over their personal details
+        if len(d) == 2:
+            print("NAME: {}\nPHONE: {}".format(d[0], d[1]))
+            make_line()
+        elif len(d) == 3:
+            print("NAME: {}\nPHONE: {}\nADDRESS: {}".format(d[0], d[1], d[2]))
+            make_line()
+        # request confirmation
+        confirm = get_yn("Please confirm your order and details are correct, (Y/N): ")
+        if confirm == "Y":
+            print("Thank you for ordering with us, your food will be ready soon.")
+            make_line()
+            # clear both the order list and details list upon confirmation
+            c.clear()
+            d.clear()
+        else:
+            print("Order is not finalised.")
+            print("Returning to main menu...")
+            make_line()
 
 
 def main():
