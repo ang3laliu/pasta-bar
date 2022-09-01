@@ -44,23 +44,40 @@
         <img class="img-responsive" src="initial-project-backlog-1.jpg" alt="Inital project backlog">
         <p></p>
         <p> Document how this changes over time </p>
+        <p> </p>
+        <img class="img-responsive" src="project-backlog-2.jpg" alt="Update project backlog">
             
         <hr>
             
             
         <!-- Describing Relevant Implications -->
         <h2>Describing Relevant Implications</h2>
+        
+        <h4> Usability </h4>
+        <p> The user can intuitively learn the program quickly
+            Options are easy to understand and is easy to find appropriate actions
+            Program has error prevention methods and communicates to the user about then</p>
+        
+        <h4> Functionality </h4>
+        <p> Does the program work properly?
+            It does not crash
+            It does not do incorrect arithmetics
+            Variables (lists) are all reset once the order is complete</p>
+        
+        <h4> Sustainability and Future Proofing </h4>
+        <p> Can the program be updated? -> add new features
+            Can the program be maintained? -> cna it be handed over to another developer who can understand it quickly</p>
             
         <hr>
         
-            
+        
         <!-- Sprint One -->
         <h1>Sprint One</h1>
         <h4> Aim: </h4>
         <p> To create a main menu for users which runs in a loop, with two options; print the pasta menu or quit the program and consequently, stop the loop. The pasta menu displayed after selecting the print option should have a corresponding item number as well as price. </p>
         
         <h4> Planning Board & Code Output: </h4>
-        <img class="img-responsive" src="s1-plan.jpg" alt="Plan for sprint one">
+        <img class="img-responsive" src="s1-plan.jpg" alt="Planning for sprint one">
         <p></p>
             
         <h4> Reflection: </h4>
@@ -73,12 +90,12 @@
         <p> To create a function which allows the user to order a pasta dish from the pasta menu, selecting a flavour and quantity of choice. Another function will also be created to enable the operator to review their current order status, which means printing all of the pizza flavours and quantities they have ordered as well as the price. These options will be incorporated into the main menu as 'A' for 'Add pasta to order' and 'R' for 'Review customer order'. </p>
         
         <h4> Stand Up: </h4>
-        <img class="img-responsive" src="stand_up_1.jpg" alt="First stand up on 21/06/2022">
+        <img class="img-responsive" src="stand-up-1.jpg" alt="First stand up on 21/06/2022">
         <p></p>
         <p> Planning for sprint two includes a short meeting at the beginning of the lesson which questions what we have already completed, what we intend to complete and what is blocking us from doing so. On the 21st of June, I had completed and tested the first sprint of my program and pushed it to Github. I decided, as seen above, to finish a reflection for my first sprint and start planning for my second sprint, which involes creating an add pasta to order and review order function.</p>
         
         <h4> Planning Board & Code Output: </h4>
-        <img class="img-responsive" src="s2-plan-1.jpg" alt="Planning board, simple validation code and output for sprint two">
+        <img class="img-responsive" src="s2-plan-1.jpg" alt="Planning for sprint two">
         <p></p>
         <img class="img-responsive" src="s2-plan-2.jpg" alt="Code and output for sprint two">
         <p></p>
@@ -94,35 +111,78 @@
         <p> To create a function which allows the user to adjust the number of pasta dishes in their current order. The function should print out the customer order with corresponding item numbers and ask the user which pasta dish they wish to change the quanity of. The user can then input the new number of dishes they would like. This update pasta option will be incorporated into the main menu as 'U' for 'Update pasta quantity'. </p>
         
         <h4> Planning Board & Code Output: </h4>
-        <img class="img-responsive" src="s3-plan-1.jpg" alt="">
+        <img class="img-responsive" src="s3-plan-1.jpg" alt="Planning for sprint three">
         <p></p>
-        <img class="img-responsive" src="s3-plan-2.jpg" alt="">
+        <img class="img-responsive" src="s3-plan-2.jpg" alt="Code and output for sprint three">
         <p></p>
             
         <h4> Reflection: </h4>
-        <p> </p>
+        <p> This 'update pasta' function is slightly different from what I initially planned in my project backlog. My original idea was to create a function where the user can remove a certain number of pasta from their order. I ultimately decided that rather than asking how many pasta the user would like to remove, it would be more appropriate for the program to ask for the new quatity of desired pasta. This design choice can be effective in situations where the user would like more of a pasta they have already ordered. I thought an 'update pasta' function would be more sutiable, rather than using the 'add pasta' option and creating a double up in the list. However, this would be irrelvant should the user choose 'add pasta' over than 'update pasta' in a circumstance such as this. </p>
+        
+        <p> The first screenshot demonstrates how the update pasta function runs when the user makes no mistakes upon entry. The second screenshot next to it is where I encountered an error, a string is entered when the program wants an integer. There is no validation to support this and return an error message, so instead the program crashes. This is something I will be looking to validate in my final sprint. </p>
         <hr>
             
         <!-- Sprint Four -->   
         <h1>Sprint Four</h1>
         <h4> Aim: </h4>
-        <p> To create... complete order funtion + addition of grand total to review order function </p>
+        <p> To create several functions which will allow the user to view a general description of each pasta dish, cancel their order, input customer details and finalise the order. Pasta description ('P') will print pasta names, description of dish and prices upon request. Cancel order ('C') will request confirmation from the user, before clearing both the customer order and details lists or state that no changes have been made. Get customer details ('G') will request an order name, phone number and delivery option. Pick up is free of charge and delivery is an extra $3, the program will request an address. Finish order ('F') will display the order and details for the user to check once more before requesting confirmation.</p>
         
         <h4> Planning Board & Code Output: </h4>
-        <img class="img-responsive" src="s4-plan-1.jpg" alt="">
+        <img class="img-responsive" src="s4-plan-1.jpg" alt="Planning for sprint four">
         <p></p>
-        <img class="img-responsive" src="" alt="">
+        <img class="img-responsive" src="s4-plan-2.jpg" alt="Code and output for sprint four">
+        <p></p>
+        <img class="img-responsive" src="s4-plan-3.jpg" alt="Code and output for sprint four">
         <p></p>
             
         <h4> Reflection: </h4>
         <p> validation </p>
         <hr>
+        
+        <!-- Sprint Five -->   
+        <h1>Sprint Five</h1>
+        <h4> Aim: </h4>
+        <p> lots of validation</p>
+        
+        <h4> Planning Board & Code Output: </h4>
+        <img class="img-responsive" src="" alt="Planning for sprint five">
+        <p></p>
+        <img class="img-responsive" src="" alt="Code and output for sprint five">
+        <p></p>
+            
+        <h4> Reflection: </h4>
+        <p> reflection </p>
+        <hr>
+        
+        <!-- Final Reflection -->   
+        <h1>Final Reflection</h1>
+        <h4> What worked well: </h4>
+        <p> </p>
+        
+        <h4> Errors I Encountered: </h4>
+        <p> </p>
+        <hr>
+        
+        
+        <!-- Addressing Relevant Implications -->
+        <h2>Addressing Relevant Implications</h2>
+            
+        <h4> Usability </h4>
+        <p> </p>
+        
+        <h4> Functionality </h4>
+        <p> </p>
+        
+        <h4> Sustainability and Future Proofing </h4>
+        <p> </p>
+        
+        <hr>
 
             
-    <!-- Paragraphs -->
-    <h3>Example of formatted code</h3>
+        <!-- Paragraphs -->
+        <h3>Example of formatted code</h3>
 	
-    <pre style="font-size: 1.5em;">
+        <pre style="font-size: 1.5em;">
         <code class="Python">
 # interesting comment
 def review_fruit(l):
@@ -131,85 +191,16 @@ for x in l:
 print(output)
 return None
         </code>
-    </pre>
-					<hr>
-
-					<!-- Responsive images -->
-					<h3>Example image placements</h3>
-					<p>For images to be responsive (so that they will rescale to suit the width of the parent, use the <code>.img-responsive</code> class.</p>
-					<img class="img-responsive" src="assets/img/place_holder.png" alt="">
-                <hr>
-                <div class="col-container">
-                <div class="col">
-               <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                 <div class="col">
-                <img class="img-responsive" src="assets/img/place_holder_sm.jpg" alt="">
-                <p>Ut wisi enim ad minim veniam, <a href="#">quis nostrud exerci tation ullamcorper</a> suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel.</p>
-                </div>
-                </div>
-                <hr>
-               
-              
-
-					<!-- Lists -->
-					<h3>Unordered list</h3>
-					<p>Unordered lists are used to markup lists where list items do not require numbering.</p>
-					<ul>
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Ordered list</h3>
-					<p>Ordered lists are used to markup lists where list items require numbering.</p>
-					<ol>
-						<li>Hendrerit in vulputate velit esse</li>
-						<li>Olestie consequat</li>
-						<li>Vel illum dolore eu feugiat</li>
-						<li>Nulla facilisis at vero eros</li>
-						<li>Accumsan et iusto odio</li>
-					</ol>
-					<hr>
-
-					<h3>Unstyled list</h3>
-					<p>You can make the list unstyled using the <code>list-unstyled</code> class.</p>
-					<ul class="list-unstyled">
-						<li>Ut wisi enim ad minim veniam</li>
-						<li>Quis nostrud exerci tation</li>
-						<li>Lamcorper suscipit lobortis nis</li>
-						<li>Ut aliquip ex ea commodo consequat</li>
-						<li>Duis autem vel eum iriure dolor</li>
-					</ul>
-					<hr>
-
-					<h3>Inline list</h3>
-					<p>You can make the list display inline using the <code>list-inline</code> class.</p>
-					<ul class="list-inline">
-						<li>One</li>
-						<li>Two</li>
-						<li>Three</li>
-						<li>Four</li>
-					</ul>
-					<hr>
-
-				
-
-					<h3>Buttons</h3>
-					<p>You can apply the <code>btn</code> class to any element that requires a button style.</p>
-					<p><a href="#" class="btn">Submit</a></p>
-					<hr>
+        </pre>
+        <hr>
 
 
+        <h3>Buttons</h3>
+        <p>You can apply the <code>btn</code> class to any element that requires a button style.</p>
+        <p><a href="#" class="btn">Submit</a></p>
+        <hr>
 
-               
-            
 
-			
 			</div>
 			<div class="footer">
 				&copy; Copyright 2015
