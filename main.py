@@ -64,8 +64,6 @@ def get_yn(m):
     """Get a string input, either 'Y' or 'N', from the user.
 
     :param m: str
-    :param min_: int
-    :param max_: int
     :return: str
     """
     get_input = True
@@ -83,7 +81,8 @@ def make_line():
 
     :return: None
     """
-    print("-" * 40)
+    print("-" * 45)
+    return None
 
 
 def view_menu(menu):
@@ -101,6 +100,7 @@ def view_menu(menu):
         print(output)
         i += 1
     make_line()
+    return None
 
 
 def pasta_descriptions():
@@ -124,32 +124,58 @@ def pasta_descriptions():
         i += 1
         print(output)
     make_line()
+    return None
 
 
 def add_pasta(menu, c):
-    """Add pasta to a order list.
+    """Add pasta to customer order.
 
     :param menu: list
     :param c: list
     :return: None
     """
     view_menu(menu)
-    # get the type of desired pasta
     add_pasta_type = get_integer("Please select the item number of the pasta you would like to order: ", 1, 9)
-    # get the desired amount of said pasta
-    add_pasta_quantity = get_integer("How many {} would you like to order? Maximum 5 per pasta dish: ".format(menu[add_pasta_type-1][0]), 1, 5)
-    # confirm with user using get_yn()
-    confirm = get_yn("You are adding {} {} to your order, (Y/N): ".format(add_pasta_quantity, menu[add_pasta_type-1][0]))
-    if confirm == "Y":
-        # if customer confirms, the pasta is appended onto the order list
-        c.append([menu[(add_pasta_type)-1][0], add_pasta_quantity, menu[(add_pasta_type)-1][1]])
-        output = ("You have added {} {}.".format(add_pasta_quantity, menu[(add_pasta_type)-1][0]))
-        print(output)
-    else:
-        # if customer rejects...
-        print("Order has not been updated.")
-        print("Returning to main menu...")
-    make_line()
+    double_up = False
+    # test if pasta is already there
+    # if so add to a pasta already in the customer order list
+    for i in range(len(c)):
+        if menu[add_pasta_type-1][0] == c[i][0]:
+            double_up = True
+            if c[i][1] == 5:
+                print("You currently have 5 {}.".format(c[i][0]))
+                print("This is the maximum amount you can order.")
+                print("Returning to main menu...")
+                make_line()
+            else:
+                if c[i][1] < 5:
+                    print("You currently have {} {}, you can order {} more.".format(c[i][1], c[i][0], 5 - c[i][1]))
+                add_pasta_quantity = get_integer("How many {} would you like to order? Maximum of 5 dishes per pasta: ".format(menu[add_pasta_type - 1][0]), 1, 5 - c[i][1])
+                confirm = get_yn("You are adding {} {} to your order, (Y/N): ".format(add_pasta_quantity, menu[add_pasta_type - 1][0]))
+                if confirm == "Y":
+                    c[i][1] += add_pasta_quantity
+                    print("You have added {} {}.".format(add_pasta_quantity, menu[add_pasta_type - 1][0]))
+                    print("You now have {} {}".format(c[i][1], menu[add_pasta_type - 1][0]))
+                else:
+                    print("Order has not been updated.")
+                    print("Returning to main menu...")
+                make_line()
+    # adding a new pasta
+    if double_up is False:
+        # run regular order
+        add_pasta_quantity = get_integer("How many {} would you like to order? Maximum of 5 dishes per pasta: ".format(menu[add_pasta_type - 1][0]), 1, 5)
+        confirm = get_yn("You are adding {} {} to your order, (Y/N): ".format(add_pasta_quantity, menu[add_pasta_type - 1][0]))
+        if confirm == "Y":
+            # if customer confirms, the pasta is appended onto the order list
+            c.append([menu[add_pasta_type - 1][0], add_pasta_quantity, menu[add_pasta_type - 1][1]])
+            output = ("You have added {} {}.".format(add_pasta_quantity, menu[add_pasta_type - 1][0]))
+            print(output)
+        else:
+            # if customer rejects...
+            print("Order has not been updated.")
+            print("Returning to main menu...")
+        make_line()
+    return None
 
 
 def update_pasta(c):
@@ -166,12 +192,12 @@ def update_pasta(c):
     # user chooses which pasta they would like to update view the corresponding number
     pasta_index = get_integer("Please select the item number of the pasta you would like update: ", 1, len(c))
     # user requests a new quantity for the pasta
-    new_pasta_quantity = get_integer("Please select the new number of {} you would like: ".format(c[(pasta_index)-1][0]), 0, 5)
+    new_pasta_quantity = get_integer("Please select the new number of {} you would like: ".format(c[pasta_index-1][0]), 0, 5)
     # request confirmation from user
-    confirm = get_yn("You will have {} {} in your order, Y/N: ".format(new_pasta_quantity, c[(pasta_index)-1][0]))
+    confirm = get_yn("You will have {} {} in your order, Y/N: ".format(new_pasta_quantity, c[pasta_index-1][0]))
     if confirm == "Y":
         # if customer confirms, make the previous quantity equal to the new quantity
-        c[(pasta_index)-1][1] = new_pasta_quantity
+        c[pasta_index-1][1] = new_pasta_quantity
         # if the new quantity is 0...
         if new_pasta_quantity == 0:
             print("You now have 0 {} in your order.".format(c[pasta_index - 1][0]))
@@ -187,6 +213,7 @@ def update_pasta(c):
     make_line()
     # prints order to display changes
     review_order(c)
+    return None
 
 
 def review_order(c):
@@ -212,6 +239,7 @@ def review_order(c):
             print(output)
     print("Total Price : ${}".format(grand_total))
     make_line()
+    return None
 
 
 def cancel_order(c, d):
@@ -235,6 +263,7 @@ def cancel_order(c, d):
         print("Order has not been cancelled.")
         print("Returning to main menu...")
         make_line()
+    return None
 
 
 def delivery_option(d):
@@ -277,6 +306,7 @@ def delivery_option(d):
         print("No details confirmed.")
         print("Returning to main menu...")
     make_line()
+    return None
 
 
 def finish_order(c, d, extras=3):
@@ -331,6 +361,7 @@ def finish_order(c, d, extras=3):
             print("Order is not finalised.")
             print("Returning to main menu...")
             make_line()
+    return None
 
 
 def main():
@@ -399,6 +430,7 @@ def main():
             print("Please select one of the options provided.")
             make_line()
     print("Thank you, the program has ended.")
+    return None
 
 
 if __name__ == "__main__":
